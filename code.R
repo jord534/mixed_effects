@@ -1,6 +1,6 @@
 setwd("/Users/jordanbonil/Documents/Mixed\ Effects\ Models/projet/")
 
-
+# this is a test
 #### PART 1 ###
 
 # 1.1 #
