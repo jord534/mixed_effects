@@ -1,4 +1,5 @@
-setwd("/Users/jordanbonil/Documents/Mixed\ Effects\ Models/projet/")
+#setwd("/Users/jordanbonil/Documents/Mixed\ Effects\ Models/projet/")
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 
 # this is a test
 #### PART 1 ###
