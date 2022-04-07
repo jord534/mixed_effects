@@ -15,7 +15,7 @@ data = na.omit(data)
 par(mfrow=c(1,2))
 qqnorm(data$CD4, main = "CD4 before normalisation")
 data$CD4 = data$CD4^0.25
-qqnorm(data$CD4, main = "CD4 after *0.25")
+qqnorm(data$CD4, main = "CD4 after ^0.25")
 # the normalisation for VL is unchanged
 
 par(mfrow=c(1,2))
