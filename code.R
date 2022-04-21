@@ -23,6 +23,14 @@ qqnorm(data$VL, main = "VL before normalisation")
 data$VL = log(data$VL)/log(10)
 qqnorm(data$VL, main = "qqplot for log10(VL)")
 #the normalisation for VL is greatly improved
+# but wee need to remove all points that are less than the 3rd quantile
+VL_quantiles = qqnorm(data$VL, plot.it = FALSE)$x
+mask = VL_quantiles > -1 # data points to keep
+data = data[mask,]
+par(mfrow=c(1,1))
+qqnorm(data$VL, main = "qqplot for log10(VL) w/o non normalised pt")
+qqline(data$VL, datax = FALSE, distribution = qnorm,
+       probs = c(0.25, 0.75), qtype = 7)
 data$dd4Tddl = as.numeric(data$RAN_GRP != 1)
 
 
@@ -48,3 +56,14 @@ plot(rollmean(CD4_avg$x, k=73), main = "Rolling Average of mean CD4 trajectory",
 
 plot(rollmean(VL_avg$x, k=73), main = "Rolling Average of mean VL trajectory", xlab = "days")
 
+# 1.3 #
+
+azt3tc_grp = subset(data, data$RAN_GRP != 2)
+azt3tc_grp$TD2 = azt3tc_grp$TD^2
+library(lme4)
+cd4_mixed_RAN_GRP = lmer( azt3tc_grp$CD4 ~ azt3tc_grp$TD +  (1 | azt3tc_grp$RAN_GRP), data = azt3tc_grp)
+summary(cd4_mixed_RAN_GRP)
+confint(cd4_mixed_RAN_GRP)
+
+cd4_mixed_dd4Tddl = lmer( azt3tc_grp$CD4 ~ azt3tc_grp$TD +  (1 | azt3tc_grp$dd4Tddl), data = azt3tc_grp)
+summary(cd4_mixed_dd4Tddl)
