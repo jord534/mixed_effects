@@ -1,0 +1,5 @@
+parameter,covariate,statistics,p-value,test
+V,beta_V_SEX_M,7.02296,1.48679e-06,t-Test
+k,beta_k_SEX_M,-3.59372,0.00207601,t-Test
+k12,beta_k12_SEX_M,-12.6953,4.23087e-10,t-Test
+k12,beta_k12_WEIGHT,5.7794,2.22184e-05,t-Test

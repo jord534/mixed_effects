@@ -1,0 +1,2 @@
+parameter,covariate,statistics,p-value,test
+k12,beta_k12_SEX_M,-6.41026,4.9182e-06,t-Test

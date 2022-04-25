@@ -1,0 +1,133 @@
+********************************************************************************
+*                     PK_2comp_SEX_SEX_WEIGHT_all.mlxtran                      *
+*                     April 25, 2022 at 19:45:47                               *
+*                     Monolix version : 2021R1                                 *
+********************************************************************************
+
+
+ESTIMATION OF THE POPULATION PARAMETERS ________________________________________
+
+Fixed Effects ----------------------------     se_sa    rse(%)
+Tk0_pop         :                    0.168     0.143      85.4
+beta_Tk0_WEIGHT :                   0.0241    0.0124      51.3
+V_pop           :                    0.565    0.0543      9.61
+beta_V_SEX_M    :                    0.774     0.128      16.6
+k_pop           :                    0.319    0.0162      5.06
+beta_k_SEX_M    :                   -0.144    0.0599      41.5
+k12_pop         :                   0.0293    0.0149      50.8
+beta_k12_SEX_M  :                   -0.802     0.129      16.1
+beta_k12_WEIGHT :                    0.026   0.00777      29.8
+k21_pop         :                   0.0887   0.00833       9.4
+
+Standard Deviation of the Random Effects -
+omega_Tk0       :                    0.368    0.0763      20.7
+omega_V         :                    0.268    0.0482        18
+omega_k         :                    0.106    0.0233        22
+omega_k12       :                    0.173    0.0667      38.6
+
+Error Model Parameters -------------------
+a               :                 2.22e-16       nan       nan
+b               :                    0.163     0.008       4.9
+
+Elapsed time (seconds):        5
+CPU time     (seconds):       16
+Exploratory phase iterations:      157 (Autostop)
+Smoothing phase iterations:        122 (Autostop)
+
+ _______________________________________________________________________________
+
+
+
+ESTIMATION OF THE INDIVIDUAL PARAMETERS ________________________________________
+
+
+Estimation of the individual parameters by Conditional Distribution ------------
+            min        Q1    median        Q3       max
+Tk0 :     0.439     0.621     0.817      1.13      1.69
+V   :     0.358     0.556     0.972       1.2      2.24
+k   :     0.224     0.275       0.3     0.325     0.355
+k12 :    0.0541    0.0835     0.111     0.159     0.235
+k21 :    0.0887    0.0887    0.0887    0.0887    0.0887
+
+Elapsed time (seconds):     0.58
+CPU time     (seconds):        2
+Iterations:       64 (Autostop)
+
+ -------------------------------------------------------------------------------
+
+
+Estimation of the individual parameters by Conditional Mode --------------------
+            min        Q1    median        Q3       max
+Tk0 :       0.5     0.657     0.841      1.16      1.72
+V   :     0.372     0.556     0.978      1.22      2.28
+k   :     0.223     0.275     0.304     0.325      0.35
+k12 :    0.0536    0.0839     0.111     0.157     0.235
+k21 :    0.0887    0.0887    0.0887    0.0887    0.0887
+
+Elapsed time (seconds):    0.018
+CPU time     (seconds):        0
+
+ -------------------------------------------------------------------------------
+
+ _______________________________________________________________________________
+
+
+
+ESTIMATION OF THE FISHER INFORMATION MATRIX ____________________________________
+
+
+Estimation of the Fisher information matrix by Stochastic Approximation --------
+
+Correlation Matrix :
+        Tk0_pop         1
+beta_Tk0_WEIGHT  -0.99375         1
+          V_pop  -0.01411  0.010477         1
+   beta_V_SEX_M  0.010325 -0.011733  -0.73849         1
+          k_pop  0.061233 -0.050304  -0.22022   0.12581         1
+   beta_k_SEX_M -0.040558  0.041526   0.15233  -0.18401  -0.70525         1
+        k12_pop   0.11407  -0.11032 -0.035344 0.0051503  0.080684 -0.022941         1
+beta_k12_WEIGHT  -0.10703   0.10471   0.01209 0.0099104 -0.045187-0.00016003   -0.9871         1
+ beta_k12_SEX_M  0.012957-0.0076141  0.064672  -0.13302 -0.037578   0.17829   0.32071  -0.41812         1
+        k21_pop  0.053157 -0.041407  -0.11364 0.0087979   0.47261  -0.11555   0.05958 -0.038057    0.0885         1
+      omega_Tk0  -0.16178   0.14249 -0.017195  0.017832 0.0061079 -0.021611 -0.040659  0.042399 -0.040877 -0.024096         1
+        omega_V -0.010192 0.0094748   0.03445 -0.015536 -0.010283 0.0001458  0.016704 -0.0177520.00075783-0.0056044 -0.010455         1
+        omega_k -0.031161  0.030742 -0.019055  0.014341 -0.030663    0.0123 -0.027751  0.029619-0.0081883  0.048028 -0.039699  0.076213         1
+      omega_k12 0.0013113-0.0054038  0.017316   0.01634 -0.045831 0.0076157 -0.028946 0.0053175  -0.11734-0.0077166-0.0097782 0.0041628  0.037855         1
+              a       nan       nan       nan       nan       nan       nan       nan       nan       nan       nan       nan       nan       nan       nan       nan
+              b  0.001333 -0.003766  0.031387  -0.01651 -0.030364   0.02111   0.01237 -0.011894   0.04941 -0.053681-0.0058677 -0.045182  -0.10995  -0.19024       nan         1
+
+WARNING : Impossible to compute the eigen values of the correlation matrix.
+
+Elapsed time (seconds):      1.7
+CPU time     (seconds):      5.9
+Iterations:      200 (Stopped at the maximum number of iterations/Fisher matrix was not correctly estimated)
+
+ -------------------------------------------------------------------------------
+
+ _______________________________________________________________________________
+
+
+
+ESTIMATION OF THE LOG-LIKELIHOOD _______________________________________________
+
+                                                            (is)
+-2 x log-likelihood                       (OFV) :         529.98
+Akaike Information Criteria               (AIC) :         561.98
+Corrected Bayesian Information Criteria  (BICc) :         597.32
+Bayesian Information Criteria             (BIC) :         577.91
+
+Elapsed time                          (seconds) :           1.94
+CPU time                              (seconds) :           4.00
+MonteCarlo size (is):    10000 (Fixed number of iterations)
+
+
+[Importance Sampling] Standard error        : 0.131
+                      Sampling distribution : T-distribution with 5 degrees of freedom
+
+ _______________________________________________________________________________
+
+DATASET INFORMATION
+Number of individuals: 20
+Number of observations (CONC_ngmL): 320
+Number of doses: 20
+

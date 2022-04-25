@@ -1,0 +1,24 @@
+library(lme4)
+
+# trying to find the best model :
+m1  <- lm(sub_grp$CD4 ~ sub_grp$TD2 , data=sub_grp) 
+m2  <- lm(sub_grp$CD4 ~ sub_grp$TD + sub_grp$TD2 , data=sub_grp) 
+m3  <- lm(sub_grp$CD4 ~ 1 + sub_grp$TD2:sub_grp$TD , data=sub_grp) 
+m4  <- lm(sub_grp$CD4 ~ sub_grp$TD + sub_grp$TD2:sub_grp$TD , data=sub_grp) 
+m5  <- lmer(sub_grp$CD4 ~ sub_grp$TD2 + (1|sub_grp$NUM_PAT) , data=sub_grp) 
+m6  <- lmer(sub_grp$CD4 ~ sub_grp$TD + sub_grp$TD2 + (1|sub_grp$NUM_PAT) , data=sub_grp) 
+m7  <- lmer(sub_grp$CD4 ~ 1 + sub_grp$TD2:sub_grp$TD + (1|sub_grp$NUM_PAT) , data=sub_grp) 
+m8  <- lmer(sub_grp$CD4 ~ sub_grp$TD + sub_grp$TD2:sub_grp$TD + (1|sub_grp$NUM_PAT) , data=sub_grp) 
+m9  <- lmer(sub_grp$CD4 ~ sub_grp$TD2 + (-1+sub_grp$TD2|sub_grp$NUM_PAT) , data=sub_grp) 
+m10 <- lmer(sub_grp$CD4 ~ sub_grp$TD + sub_grp$TD2 + (-1+sub_grp$TD2|sub_grp$NUM_PAT) , data=sub_grp) 
+m11 <- lmer(sub_grp$CD4 ~ 1 + sub_grp$TD2:sub_grp$TD + (-1+sub_grp$TD2|sub_grp$NUM_PAT) , data=sub_grp) 
+m12 <- lmer(sub_grp$CD4 ~ sub_grp$TD + sub_grp$TD2:sub_grp$TD + (-1+sub_grp$TD2|sub_grp$NUM_PAT) , data=sub_grp) 
+m13 <- lmer(sub_grp$CD4 ~ sub_grp$TD2 + (sub_grp$TD2|sub_grp$NUM_PAT) , data=sub_grp) 
+m14 <- lmer(sub_grp$CD4 ~ sub_grp$TD + sub_grp$TD2 + (sub_grp$TD2|sub_grp$NUM_PAT) , data=sub_grp) 
+m15 <- lmer(sub_grp$CD4 ~ 1 + sub_grp$TD2:sub_grp$TD + (sub_grp$TD2|sub_grp$NUM_PAT) , data=sub_grp) 
+m16 <- lmer(sub_grp$CD4 ~ sub_grp$TD + sub_grp$TD2:sub_grp$TD + (sub_grp$TD2|sub_grp$NUM_PAT) , data=sub_grp) 
+# Comparing BIC and AIC
+AICtable = AIC(m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12,m13,m14,m15,m16)
+AICtable[which(AICtable$AIC == min(AICtable$AIC)),]
+BICtable<-BIC(m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12,m13,m14,m15,m16)
+BICtable[which(BICtable$BIC==min(BICtable$BIC)),]

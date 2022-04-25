@@ -1,0 +1,6 @@
+parameter,statistics,p-value,test
+Tk0,0.965459,0.967924,Shapiro-Wilk
+V,0.957465,0.766313,Shapiro-Wilk
+k,0.959515,0.789367,Shapiro-Wilk
+k12,0.968542,0.992955,Shapiro-Wilk
+k21,0.940224,0.0619402,Shapiro-Wilk

@@ -1,0 +1,8 @@
+ka_pop,41.1,3.41,62.8,nan,5.46,-3.9,0,nan
+V_pop,3.41,92.8,-1.21,nan,-30.2,1.75,-1.07e-14,nan
+Cl_pop,62.8,-1.21,185,nan,14.8,0.87,-6.18e-15,nan
+omega_ka,nan,nan,nan,nan,nan,nan,nan,nan
+omega_V,5.46,-30.2,14.8,nan,107,-0.332,4.22e-15,nan
+omega_Cl,-3.9,1.75,0.87,nan,-0.332,32.9,4.45e-16,nan
+a,0,-1.07e-14,-6.18e-15,nan,4.22e-15,4.45e-16,7.94,nan
+b,nan,nan,nan,nan,nan,nan,nan,nan

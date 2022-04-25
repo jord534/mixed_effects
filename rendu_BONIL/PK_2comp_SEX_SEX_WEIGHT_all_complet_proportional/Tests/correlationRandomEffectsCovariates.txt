@@ -1,0 +1,17 @@
+eta,covariate,statistics,p-value,test
+eta_Tk0,RACE,0.19571,0.824077,Anova
+eta_Tk0,SEX,0.114562,0.738925,Anova
+eta_Tk0,AGE,1.13328,0.271966,Pearson
+eta_Tk0,WEIGHT,1.86919,0.0779556,Pearson
+eta_V,RACE,0.16991,0.845156,Anova
+eta_V,SEX,0.0156106,0.901954,Anova
+eta_V,AGE,-0.803602,0.432112,Pearson
+eta_V,WEIGHT,0.613993,0.546903,Pearson
+eta_k,RACE,1.54249,0.24233,Anova
+eta_k,SEX,0.109857,0.744134,Anova
+eta_k,AGE,0.738394,0.469794,Pearson
+eta_k,WEIGHT,0.871244,0.395093,Pearson
+eta_k12,RACE,1.04541,0.373086,Anova
+eta_k12,SEX,1.32414e-05,0.997137,Anova
+eta_k12,AGE,1.1664,0.258674,Pearson
+eta_k12,WEIGHT,0.063299,0.950226,Pearson

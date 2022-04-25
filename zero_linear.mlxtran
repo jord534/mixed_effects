@@ -1,0 +1,68 @@
+<DATAFILE>
+
+[FILEINFO]
+file='../Documents/Mixed Effects Models/projet/final_PK_data_exam2022.txt'
+delimiter = space
+header = {ID, SEX, AGE, WEIGHT, RACE, DOSE_mg, TIME, CONC_ngmL}
+
+[CONTENT]
+ID = {use=identifier}
+SEX = {use=covariate, type=categorical}
+AGE = {use=covariate, type=continuous}
+WEIGHT = {use=covariate, type=continuous}
+RACE = {use=covariate, type=categorical}
+TIME = {use=time}
+CONC_ngmL = {use=observation, name=CONC_ngmL, type=continuous}
+
+<MODEL>
+
+[COVARIATE]
+input = {AGE, WEIGHT, RACE, SEX}
+
+RACE = {type=categorical, categories={AFRICANAMERICAN, ASIAN, WHITE}}
+SEX = {type=categorical, categories={F, M}}
+
+[INDIVIDUAL]
+input = {Tk0_pop, omega_Tk0, V_pop, omega_V, k_pop, omega_k}
+
+DEFINITION:
+Tk0 = {distribution=logNormal, typical=Tk0_pop, sd=omega_Tk0}
+V = {distribution=logNormal, typical=V_pop, sd=omega_V}
+k = {distribution=logNormal, typical=k_pop, sd=omega_k}
+
+[LONGITUDINAL]
+input = {a, b}
+
+file = 'lib:oral0_1cpt_Tk0Vk.txt'
+
+DEFINITION:
+CONC_ngmL = {distribution=normal, prediction=Cc, errorModel=combined1(a, b)}
+
+<FIT>
+data = CONC_ngmL
+model = CONC_ngmL
+
+<PARAMETER>
+Tk0_pop = {value=1, method=MLE}
+V_pop = {value=1, method=MLE}
+a = {value=1, method=MLE}
+b = {value=0.3, method=MLE}
+c = {value=1, method=FIXED}
+k_pop = {value=0.5, method=MLE}
+omega_Tk0 = {value=1, method=MLE}
+omega_V = {value=1, method=MLE}
+omega_k = {value=1, method=MLE}
+
+<MONOLIX>
+
+[TASKS]
+populationParameters()
+individualParameters(method = {conditionalMean, conditionalMode })
+fim(method = StochasticApproximation)
+logLikelihood(method = ImportanceSampling)
+plotResult(method = {indfits, parameterdistribution, covariancemodeldiagnosis, covariatemodeldiagnosis, obspred, vpc, residualsscatter, residualsdistribution, randomeffects, saemresults })
+
+[SETTINGS]
+GLOBAL:
+exportpath = 'zero_linear'
+

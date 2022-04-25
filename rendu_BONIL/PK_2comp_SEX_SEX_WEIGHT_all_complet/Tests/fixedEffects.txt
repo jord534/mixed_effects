@@ -1,0 +1,5 @@
+parameter,statistics(sa),p-value(sa)
+beta_V_SEX_M,7.05505,1.73e-12
+beta_k_SEX_M,2.59273,0.00952
+beta_k12_WEIGHT,3.12015,0.00181
+beta_k12_SEX_M,6.58962,4.41e-11

@@ -1,0 +1,4 @@
+residuals,statistics,p-value,test
+IWRES_CONC_ngmL,0.746267,0.455506,Symmetry
+PWRES_CONC_ngmL,-0.631688,0.527591,Symmetry
+NPDE_CONC_ngmL,-0.762681,0.445653,Symmetry

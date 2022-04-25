@@ -1,0 +1,2 @@
+parameter,statistics(sa),p-value(sa)
+beta_k12_SEX_M,4.14484,3.4e-05
